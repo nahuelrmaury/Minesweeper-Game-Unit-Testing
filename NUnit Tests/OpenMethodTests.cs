@@ -96,11 +96,11 @@ namespace MineSweeper.PositiveUnitTests
             /* precondition */
             _field = new bool[,]
             {
-                { false, true, false, false, false, false},
-                { true, true, false, false, false, false},
-                { false, false, false, false, false, false},
-                { false, false, false, false, false, false},
-                { false, false, false, false, false, false},
+                { false, true, false, false, false, false },
+                { true, true, false, false, false, false },
+                { false, false, false, false, false, false },
+                { false, false, false, false, false, false },
+                { false, false, false, false, false, false },
             };
             _gameProcessor = new GameProcessor(_field);
             GameState expectedGameState = GameState.Active;

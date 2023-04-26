@@ -5,9 +5,9 @@ using NUnit.Framework;
 using System.Data.Common;
 using System.Xml.Linq;
 
-/* ################################################################### */
-/* it would be better the code if a field generator class were created */
-/* ################################################################### */
+/* ################################################################ */
+/* the code would be better if a field generator class were created */
+/* ################################################################ */
 
 namespace MineSweeper.PositiveUnitTests
 {
@@ -31,7 +31,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and neighbors and the result has to be the same as _pointstate  */
+        /* open cell without mines and neighbours and the result must be the same as _pointState  */
         public void T01_FieldGenerated_OpenCellWithoutNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -58,7 +58,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 1 neighbor and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 1 neighbour and the result must be the same as _pointState  */
         public void T02_FieldGenerated_OpenCellWithOneNeighbor_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -85,7 +85,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 2 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 2 neighbours and the result must be the same as _pointState  */
         public void T03_FieldGenerated_OpenCellWithTwoNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -112,8 +112,8 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 3 neighbors and the result has to be the same as _pointstate  */
-        public void T04_FieldGenerated_OpenCellWithTreeNeighbors_ReturnExpectedPointState(int x, int y)
+        /* open cell with no mines and 3 neighbours and the result must be the same as _pointState  */
+        public void T04_FieldGenerated_OpenCellWithThreeNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
             _field = new bool[,]
@@ -139,7 +139,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 4 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 4 neighbours and the result must be the same as _pointState  */
         public void T05_FieldGenerated_OpenCellFourTreeNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -166,7 +166,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 5 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 5 neighbours and the result must be the same as _pointState  */
         public void T06_FieldGenerated_OpenCellWithFiveNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -193,7 +193,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 6 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 6 neighbours and the result must be the same as _pointState  */
         public void T07_FieldGenerated_OpenCellWithSixNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -220,7 +220,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 7 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 7 neighbours and the result must be the same as _pointState  */
         public void T08_FieldGenerated_OpenCellWithSevenNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -247,7 +247,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell without mines and 8 neighbors and the result has to be the same as _pointstate  */
+        /* open cell with no mines and 8 neighbours and the result must be the same as _pointState  */
         public void T09_FieldGenerated_OpenCellWithEightNeighbors_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
@@ -274,7 +274,7 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(1, 1)]
-        /* open cell with mines and the result has to be the same as _pointstate  */
+        /* open cell with mines and the result must be the same as _pointState  */
         public void T10_FieldGenerated_OpenCellWithMine_ReturnExpectedPointState(int x, int y)
         {
             /* precondition */
