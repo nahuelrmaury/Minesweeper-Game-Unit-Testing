@@ -2,6 +2,7 @@
 using Minesweeper.Core.Enums;
 using Minesweeper.Core.Models;
 using NUnit.Framework;
+using System.Data.Common;
 
 namespace MineSweeper.PositiveUnitTests
 {
@@ -31,7 +32,6 @@ namespace MineSweeper.PositiveUnitTests
         [TestCase(5, 5, 10, 10, 5)]
         [TestCase(10, 10, 20, 20, 10)]
         [TestCase(10, 10, 20, 20, 20)]
-
         public void T1_RandomFieldGenerator_OpenCell_GameStateObjectIsInstanceOfGameProcessor(int x, int y, int row, int column, int mines)
         {
             /* precondition */
@@ -45,7 +45,11 @@ namespace MineSweeper.PositiveUnitTests
         }
 
         [Test]
+        /* define six arguments as data input for each test cases */
+        /* cordinate x - cordinate y - game state - rows - columns - mines quantity */
         [TestCase(5, 5, GameState.Win, 10, 10, 0)]
+        [TestCase(10, 10, GameState.Win, 20, 20, 0)]
+        [TestCase(5, 5, GameState.Lose, 10, 10, 100)]
         [TestCase(10, 10, GameState.Lose, 20, 20, 400)]
         public void T2_RandomFieldGenerator_OpenCell_ReturnGameState(int x, int y, GameState gameStateExpected, int row, int column, int mines)
         {
@@ -62,6 +66,8 @@ namespace MineSweeper.PositiveUnitTests
 
         [Test]
         [TestCase(5, 5, 10, 10, 0)] /*open cell after win */
+        [TestCase(10, 10, 20, 20, 0)] /*open cell after win */
+        [TestCase(5, 5, 10, 10, 100)] /* open cell after lose */
         [TestCase(10, 10, 20, 20, 400)] /* open cell after lose */
         public void T3_RandomFieldGenerator_OpenCellAfterWinAndLose_ThrowException(int x, int y, int row, int column, int mines)
         {
