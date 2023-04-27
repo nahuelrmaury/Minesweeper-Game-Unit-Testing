@@ -13,6 +13,9 @@ namespace MineSweeper.PositiveUnitTests
         private GameProcessor _gameProcessor;
         /* boolean array that stores the state of the cells */
         private bool[,] _field;
+        /* instance to generate a boolean field for testing purposes */
+        private NewFieldGenerator _newField = new NewFieldGenerator();
+
 
         [SetUp]
         public void SetUp()
@@ -90,18 +93,11 @@ namespace MineSweeper.PositiveUnitTests
 
         /* verifies if the game state is active after open one cell without a mine  */
         [Test]
-        [TestCase(0, 0)]
-        public void T4_FieldGenerated_OpenCell_ReturnExpectedGameState(int x, int y)
+        [TestCase(1, 1, 3, 3, 4)]
+        public void T4_FieldGenerated_OpenCell_ReturnExpectedGameState(int x, int y, int rows, int columns, int mines)
         {
             /* precondition */
-            _field = new bool[,]
-            {
-                { false, true, false, false, false, false },
-                { true, true, false, false, false, false },
-                { false, false, false, false, false, false },
-                { false, false, false, false, false, false },
-                { false, false, false, false, false, false },
-            };
+            _field = _newField.FieldGenerator(rows, columns, mines);
             _gameProcessor = new GameProcessor(_field);
             GameState expectedGameState = GameState.Active;
             GameState actualGameState;
