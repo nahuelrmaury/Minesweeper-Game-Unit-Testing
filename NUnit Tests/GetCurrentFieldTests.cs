@@ -4,9 +4,9 @@ using Minesweeper.Core.Models;
 using NUnit.Framework;
 using System.Data.Common;
 
-/* ##################################################################### */
-/* the code would be better if a enum field generator class were created */
-/* ##################################################################### */
+/* ######################################################################### */
+/* # the code would be better if a enum field generator class were created # */
+/* ######################################################################### */
 
 namespace MineSweeper.PositiveUnitTests
 {

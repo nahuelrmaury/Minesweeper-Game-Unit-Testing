@@ -36,7 +36,7 @@ namespace MineSweeper.PositiveUnitTests
         [TestCase(5, 5, 16, 16, 40)] /* intermediate */
         [TestCase(10, 10, 16, 30, 99)] /* expert */
         [TestCase(10, 10, 20, 20, 400)] /* random size */
-        public void T1_RandomFieldGenerator_OpenCell_GameStateObjectIsInstanceOfGameProcessor(int x, int y, int row, int column, int mines)
+        public void T1_RandomFieldGenerator_OpenCellWithMinesAndNeighbors_GameStateObjectIsInstanceOfGameProcessor(int x, int y, int row, int column, int mines)
         {
             /* precondition */
             _field = FieldGenerator.GetRandomField(row, column, mines);
@@ -57,7 +57,7 @@ namespace MineSweeper.PositiveUnitTests
         [TestCase(5, 5, GameState.Lose, 9, 9, 81)] /* beginner lose */
         [TestCase(5, 5, GameState.Lose, 16, 16, 256)] /* intermediate lose */
         [TestCase(5, 5, GameState.Lose, 16, 30, 480)] /* expert lose */
-        public void T2_RandomFieldGenerator_OpenCell_ReturnGameState(int x, int y, GameState gameStateExpected, int row, int column, int mines)
+        public void T2_RandomFieldGenerator_OpenCellToWinOrLoseWithEverySizePosible_ReturnGameState(int x, int y, GameState gameStateExpected, int row, int column, int mines)
         {
             /* precondition */
             _field = FieldGenerator.GetRandomField(row, column, mines);
@@ -78,7 +78,7 @@ namespace MineSweeper.PositiveUnitTests
         [TestCase(5, 5, 9, 9, 81)] /* beginner open cell after lose */
         [TestCase(10, 10, 16, 16, 256)] /* intermediate open cell after lose */
         [TestCase(5, 5, 16, 30, 480)] /* expert open cell after lose */
-        public void T3_RandomFieldGenerator_OpenCellAfterWinAndLose_ThrowException(int x, int y, int row, int column, int mines)
+        public void T3_RandomFieldGenerator_OpenCellAfterWinAndLoseWithEverySizePosible_ThrowException(int x, int y, int row, int column, int mines)
         {
             /* precondition */
             _field = FieldGenerator.GetRandomField(row, column, mines);
@@ -94,7 +94,7 @@ namespace MineSweeper.PositiveUnitTests
         /* verifies if the game state is active after open one cell without a mine  */
         [Test]
         [TestCase(1, 1, 3, 3, 4)]
-        public void T4_FieldGenerated_OpenCell_ReturnExpectedGameState(int x, int y, int rows, int columns, int mines)
+        public void T4_FieldGenerated_OpenCellWithNeighborsAndNoMines_ReturnExpectedGameState(int x, int y, int rows, int columns, int mines)
         {
             /* precondition */
             _field = _newField.FieldGenerator(rows, columns, mines);
